@@ -1,0 +1,46 @@
+.faqContainer{
+   background-color: #1F212D;
+}
+
+
+/* title decoration*/
+
+
+@media (min-width: 950px){
+
+.lg\:text-3xl {
+   font-size: 4vw !important;
+}
+.faqContainer{
+   
+   padding: 0 150px;
+}
+
+
+}
+
+@media  (min-width: 950px) and (max-width: 1285px){
+
+   .lg\:text-3xl {
+      
+      padding-bottom: 12px;
+   }
+  
+}
+
+
+@media (max-width: 950px){
+
+   .lg\:text-3xl {
+      font-size: 2rem !important;
+      padding-bottom: 10px;
+   }
+  
+}
+
+
+.hrFAQ{
+   margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
