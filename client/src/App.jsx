@@ -5,7 +5,7 @@ import FaqLight from "./pages/Faq/FaqLight"
 
 function App() {
 
-  return <FaqLight />
+  return <Faq />
   
   
 }

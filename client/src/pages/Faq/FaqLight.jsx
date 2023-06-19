@@ -66,7 +66,7 @@ function FaqLight() {
 
                 {selectedIndex === 0 && (
                   <div className="flex mt-8 md:mx-10">
-                    <span className="border border-blueIcon"></span>
+                    <span className="border border-lightBlue"></span>
 
                     <p className="max-w-3xl px-4 text-darkBlue dark:text-gray-300">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
@@ -94,7 +94,7 @@ function FaqLight() {
 
                 {selectedIndex === 1 && (
                   <div className="flex mt-8 md:mx-10">
-                    <span className="border border-blueIcon"></span>
+                    <span className="border border-lightBlue"></span>
 
                     <p className="max-w-3xl px-4 text-darkBlue dark:text-gray-300">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
@@ -122,7 +122,7 @@ function FaqLight() {
 
                 {selectedIndex === 2 && (
                   <div className="flex mt-8 md:mx-10">
-                    <span className="border border-blueIcon"></span>
+                    <span className="border border-lightBlue"></span>
 
                     <p className="max-w-3xl px-4 text-darkBlue dark:text-gray-300">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
@@ -150,7 +150,7 @@ function FaqLight() {
 
                 {selectedIndex === 3 && (
                   <div className="flex mt-8 md:mx-10">
-                    <span className="border border-blueIcon"></span>
+                    <span className="border border-lightBlue"></span>
 
                     <p className="max-w-3xl px-4 text-darkBlue dark:text-gray-300">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
@@ -178,7 +178,7 @@ function FaqLight() {
 
                 {selectedIndex === 4 && (
                   <div className="flex mt-8 md:mx-10">
-                    <span className="border border-blueIcon"></span>
+                    <span className="border border-lightBlue"></span>
 
                     <p className="max-w-3xl px-4 text-darkBlue dark:text-gray-300">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eum quae. Harum officiis reprehenderit ex quia ducimus minima id provident molestias optio nam vel, quidem iure voluptatem, repellat et ipsa.
