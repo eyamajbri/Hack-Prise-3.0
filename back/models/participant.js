@@ -11,7 +11,7 @@ const participantSchema = mongoose.Schema({
     required: true 
   },
   tel:{
-    type: String,
+    type: Number,
     required: true 
   },
   profession:{

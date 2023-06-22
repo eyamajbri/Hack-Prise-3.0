@@ -1,0 +1,54 @@
+*{
+  border-width: 2px;
+ border-style:initial;
+}
+.crud-page {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 100px;
+  }
+  
+  input {
+    margin-bottom: 5px;
+    border-color: black;
+  }
+  
+  button {
+    margin-top: 5px;
+    background-color: #4CAF50;
+  }
+  
+  .fetch-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .participant-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .participant-list li {
+    margin-bottom: 5px;
+  }
+  
+  .participant-details {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  

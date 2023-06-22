@@ -1,11 +1,14 @@
 import Faq from "./pages/Faq/Faq"
 import FaqLight from "./pages/Faq/FaqLight"
-
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard"
 
 
 function App() {
 
-  return <Faq />
+  return <div>
+   <Faq />
+   {/* <FaqLight /> */}
+   </div>
   
   
 }
