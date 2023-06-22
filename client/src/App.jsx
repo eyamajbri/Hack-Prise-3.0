@@ -6,8 +6,7 @@ import AdminDashboard from "./pages/AdminDashboard/AdminDashboard"
 function App() {
 
   return <div>
-   <Faq />
-   {/* <FaqLight /> */}
+   <AdminDashboard />
    </div>
   
   

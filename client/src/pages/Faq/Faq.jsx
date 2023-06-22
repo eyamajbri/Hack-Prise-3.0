@@ -52,7 +52,7 @@ function Faq() {
               <div>
                 <button className="flex items-center focus:outline-none" onClick={() => toggleParagraph(0)}>
                   {selectedIndex === 0 ? (
-                    <svg className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                     </svg>
                   ) : (
@@ -80,11 +80,11 @@ function Faq() {
               <div>
                 <button className="flex items-center focus:outline-none" onClick={() => toggleParagraph(1)}>
                   {selectedIndex === 1 ? (
-                    <svg className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                     </svg>
                   ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
                     </svg>
                   )}
@@ -108,7 +108,7 @@ function Faq() {
               <div>
                 <button className="flex items-center focus:outline-none" onClick={() => toggleParagraph(2)}>
                   {selectedIndex === 2 ? (
-                    <svg className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                     </svg>
                   ) : (
@@ -136,7 +136,7 @@ function Faq() {
               <div>
                 <button className="flex items-center focus:outline-none" onClick={() => toggleParagraph(3)}>
                   {selectedIndex === 3 ? (
-                    <svg className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                     </svg>
                   ) : (
@@ -164,7 +164,7 @@ function Faq() {
               <div>
                 <button className="flex items-center focus:outline-none" onClick={() => toggleParagraph(4)}>
                   {selectedIndex === 4 ? (
-                    <svg className="flex-shrink-0 w-6 h-6 text-blueIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="flex-shrink-0 w-6 h-6 text-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                     </svg>
                   ) : (
