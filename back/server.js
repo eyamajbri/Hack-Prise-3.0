@@ -1,6 +1,9 @@
 const express =require ('express')
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+
+
 
 const participant = require('./models/participant')
 
@@ -29,6 +32,7 @@ app.use(cors({
   origin: 'http://localhost:5173',
 }));
 
+app.use(bodyParser.json());
 
 app.get('/participants', async (req, res) => {
   try {
@@ -55,20 +59,20 @@ app.delete('/participants/:id', (req, res, next) => {
 })
 
 
-app.post('/participants',(req,res,next)=>{
-  const newParticipant = new participant ({
-    nom : req.body.nom,
-    email : req.body.email, 
-    tel : req.body.tel,
-    profession : req.body.profession,});
+app.post('/participants', async (req, res) => {
+  const newParticipant = new participant({
+    nom: req.body.nom,
+    email: req.body.email,
+    tel: parseInt(req.body.tel),
+    profession: req.body.profession,
+  });
 
-    
-    newParticipant.save()
-    .then(()=>res.status(201).json({ message : 'participant ajouté'}))
-    .catch(error => res.status(400).json({error}));
+  await newParticipant
+    .save()
+    .then(() => res.status(201).json(newParticipant))
+    .catch((error) => res.status(400).json({ error }));
+});
 
-}
-)
 
 module.exports = app;
 

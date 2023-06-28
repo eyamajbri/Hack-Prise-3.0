@@ -7,9 +7,9 @@ function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(false);
   const [newParticipant, setNewParticipant] = useState({
     nom: '',
+    profession: '',
     email: '',
-    tel: '',
-    profession: ''
+    tel: ''
   });
 
   useEffect(() => {
@@ -49,21 +49,35 @@ function AdminDashboard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const { nom, profession, email, tel } = newParticipant;
+
+    if (nom.trim() === '' || profession.trim() === '' || email.trim() === '' || tel.trim() === '') {
+      alert("Veuillez saisir tous les champs requis.");
+      return;
+    }
+
     try {
-      const response = await axios.post("http://localhost:3000/participants/", newParticipant);
-      const createdParticipant = response.data;
-      setParticipants([...participants, createdParticipant]);
+      await axios.post("http://localhost:3000/participants/", {
+        nom: nom,
+        profession: profession,
+        email: email,
+        tel: tel
+      });
+
       setNewParticipant({
         nom: '',
+        profession: '',
         email: '',
-        tel: '',
-        profession: ''
+        tel: ''
       });
+
+      alert("Participant ajouté.");
     } catch (error) {
       console.log(error);
+      alert("Une erreur s'est produite lors de l'ajout.");
     }
   };
-  
 
   return (
     <div className="admin-dashboard">
