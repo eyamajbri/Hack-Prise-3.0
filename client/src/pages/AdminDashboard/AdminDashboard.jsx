@@ -49,35 +49,40 @@ function AdminDashboard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const { nom, profession, email, tel } = newParticipant;
-
+  
     if (nom.trim() === '' || profession.trim() === '' || email.trim() === '' || tel.trim() === '') {
       alert("Veuillez saisir tous les champs requis.");
       return;
     }
-
+  
     try {
-      await axios.post("http://localhost:3000/participants/", {
+      const response = await axios.post("http://localhost:3000/participants/", {
         nom: nom,
         profession: profession,
         email: email,
         tel: tel
       });
-
+  
+      const newParticipantData = response.data;
+  
       setNewParticipant({
         nom: '',
         profession: '',
         email: '',
         tel: ''
       });
-
+  
+      setParticipants((prevParticipants) => [...prevParticipants, newParticipantData]);
+  
       alert("Participant ajouté.");
     } catch (error) {
       console.log(error);
       alert("Une erreur s'est produite lors de l'ajout.");
     }
   };
+  
 
   return (
     <div className="admin-dashboard">
@@ -116,6 +121,8 @@ function AdminDashboard() {
         </table>
       )}
       
+      <br />
+      <br />
       <form className="add-participant-form" method='post' onSubmit={handleSubmit}>
         <h3>Add Participant</h3>
         <div className="form-group">
