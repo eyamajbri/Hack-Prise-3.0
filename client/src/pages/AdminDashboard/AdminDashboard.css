@@ -73,3 +73,21 @@
 .add-participant-form button[type="submit"]:hover {
   background-color: #45a049;
 }
+
+
+/* AdminDashboard.css */
+
+.check-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0 20px;
+  margin: 0;
+  color: #000;
+}
+
+.check-button.green {
+  background-color: green;
+}
+

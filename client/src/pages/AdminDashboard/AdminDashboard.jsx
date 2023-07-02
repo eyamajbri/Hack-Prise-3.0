@@ -11,6 +11,7 @@ function AdminDashboard() {
     email: '',
     tel: ''
   });
+  const [buttonStates, setButtonStates] = useState([]); // Array to track button states
 
   useEffect(() => {
     const fetchParticipants = async () => {
@@ -19,6 +20,7 @@ function AdminDashboard() {
         const response = await axios.get("http://localhost:3000/participants/");
         const data = response.data;
         setParticipants(data);
+        setButtonStates(new Array(data.length).fill(false)); // Initialize button states array
       } catch (error) {
         console.log(error);
       } finally {
@@ -29,17 +31,31 @@ function AdminDashboard() {
     fetchParticipants();
   }, []);
 
+  //for the delete button 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/participants/${id}`);
       setParticipants((prevParticipants) =>
         prevParticipants.filter((participant) => participant._id !== id)
       );
+      setButtonStates((prevStates) =>
+        prevStates.filter((_, index) => index !== id)
+      );
     } catch (error) {
       console.log(error);
     }
   };
 
+//button de confirmation
+  const handleButtonClick = (index) => {
+    setButtonStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  };
+
+  //putting the data of the inputs in the variables 
   const handleInputChange = (e) => {
     setNewParticipant({
       ...newParticipant,
@@ -47,16 +63,17 @@ function AdminDashboard() {
     });
   };
 
+  // submit button
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const { nom, profession, email, tel } = newParticipant;
-  
+
     if (nom.trim() === '' || profession.trim() === '' || email.trim() === '' || tel.trim() === '') {
       alert("Veuillez saisir tous les champs requis.");
       return;
     }
-  
+
     try {
       const response = await axios.post("http://localhost:3000/participants/", {
         nom: nom,
@@ -64,25 +81,25 @@ function AdminDashboard() {
         email: email,
         tel: tel
       });
-  
+
       const newParticipantData = response.data;
-  
+
       setNewParticipant({
         nom: '',
         profession: '',
         email: '',
         tel: ''
       });
-  
+
       setParticipants((prevParticipants) => [...prevParticipants, newParticipantData]);
-  
+      setButtonStates((prevStates) => [...prevStates, false]);
+
       alert("Participant ajouté.");
     } catch (error) {
       console.log(error);
       alert("Une erreur s'est produite lors de l'ajout.");
     }
   };
-  
 
   return (
     <div className="admin-dashboard">
@@ -98,10 +115,11 @@ function AdminDashboard() {
               <th>Phone</th>
               <th>Profession</th>
               <th>Action</th>
+              <th>Confirmation</th>
             </tr>
           </thead>
           <tbody>
-            {participants.map((participant) => (
+            {participants.map((participant, index) => (
               <tr key={participant._id}>
                 <td>{participant.nom}</td>
                 <td>{participant.email}</td>
@@ -115,12 +133,20 @@ function AdminDashboard() {
                     Delete
                   </button>
                 </td>
+                <td>
+                  <button
+                    className={`check-button ${buttonStates[index] ? 'green' : ''}`}
+                    onClick={() => handleButtonClick(index)}
+                  >
+                    {buttonStates[index] ? '✓' : 'not yet'}
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      
+
       <br />
       <br />
       <form className="add-participant-form" method='post' onSubmit={handleSubmit}>

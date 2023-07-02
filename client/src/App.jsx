@@ -7,7 +7,7 @@ import Prizes from "./pages/Prizes/Prizes"
 function App() {
 
   return <div>
-   <Prizes />
+   <AdminDashboard />
    </div>
   
   
