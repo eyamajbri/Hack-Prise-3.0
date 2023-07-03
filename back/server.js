@@ -73,6 +73,25 @@ app.post('/participants', async (req, res) => {
     .catch((error) => res.status(400).json({ error }));
 });
 
+// Update the button state for a participant
+app.patch('/participants/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { isButtonClicked } = req.body;
+
+    const updatedParticipant = await participant.findByIdAndUpdate(
+      id,
+      { isButtonClicked },
+      { new: true }
+    );
+
+    res.json(updatedParticipant);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server Error' });
+  }
+});
+
 
 module.exports = app;
 

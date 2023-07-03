@@ -17,7 +17,11 @@ const participantSchema = mongoose.Schema({
   profession:{
     type:String,
     required: true 
-  }
+  },
+  isConfirmed: {
+    type: Boolean,
+    default: false,
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('participant', participantSchema);
