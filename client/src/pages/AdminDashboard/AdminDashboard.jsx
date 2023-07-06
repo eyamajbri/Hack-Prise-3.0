@@ -191,7 +191,7 @@ function AdminDashboard() {
             required
           />
         </div>
-        <button type="submit">Add</button>
+        <button type="submit">Add:</button>
       </form>
     </div>
   );
